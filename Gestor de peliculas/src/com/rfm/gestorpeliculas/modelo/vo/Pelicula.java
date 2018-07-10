@@ -5,6 +5,7 @@ public class Pelicula {
     private String titulo;
     private String director;
     private int year;
+    private String genero;
     private String soporte;
 
     public String getTitulo() {
@@ -38,7 +39,13 @@ public class Pelicula {
     public void setSoporte(String soporte) {
         this.soporte = soporte;
     }
-    
-    
 
+    public String getGenero() {
+	return genero;
+    }
+
+    public void setGenero(String genero) {
+	this.genero = genero;
+    }
+    
 }

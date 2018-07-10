@@ -25,11 +25,12 @@ public class PeliculaDao {
 	    stmt.setString(1, miPelicula.getTitulo().trim());
 	    stmt.setString(2, miPelicula.getDirector().trim());
 	    stmt.setInt(3, miPelicula.getYear());
-	    stmt.setString(4, miPelicula.getSoporte().trim());
+	    stmt.setString(4, miPelicula.getGenero().trim());
+	    stmt.setString(5, miPelicula.getSoporte().trim());
 	    stmt.executeUpdate();
 
 	    Ventana.textoResultado.setText(" Registro realizado!\n · Título: " + miPelicula.getTitulo()
-		    + "\n · Director: " + miPelicula.getDirector() + "\r\n · Año: " + miPelicula.getYear()
+		    + "\n · Director: " + miPelicula.getDirector() + "\r\n · Año: " + miPelicula.getYear() + "\r\n · Género: " + miPelicula.getGenero()
 		    + "\r\n · Soporte: " + miPelicula.getSoporte());
 
 	    stmt.close();
@@ -58,6 +59,7 @@ public class PeliculaDao {
 		miPelicula.setTitulo(rs.getString("titulo"));
 		miPelicula.setDirector(rs.getString("director"));
 		miPelicula.setYear(Integer.parseInt(rs.getString("year")));
+		miPelicula.setGenero(rs.getString("genero"));
 		miPelicula.setSoporte(rs.getString("soporte"));
 		miLista.add(miPelicula);
 	    }
